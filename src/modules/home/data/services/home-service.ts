@@ -32,4 +32,17 @@ export class HomeService {
     );
     return await response.json();
   }
+
+  async upload(file: any): Promise<void> {
+    const formData = new FormData();
+    formData.append("file", file);
+    const response = await fetch(`${this.getBaseUrl()}/cloud/upload`, {
+      method: "POST",
+      body: formData,
+      headers: {
+        Authorization: `Bearer ${getCookie("access_token")}`,
+      },
+    });
+    await response.json();
+  }
 }

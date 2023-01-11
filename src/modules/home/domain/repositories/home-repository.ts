@@ -4,4 +4,6 @@ export abstract class HomeRepository {
     page: number,
     limit: number
   ): Promise<any>;
+
+  abstract upload(file: any): Promise<void>;
 }

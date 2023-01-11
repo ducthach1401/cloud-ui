@@ -1,6 +1,6 @@
 import { AppBar, Grid, Link } from "@mui/material";
 import React from "react";
-import { UploadModule } from "../../../../upload/upload-module";
+import { UploadComponent } from "./upload-component";
 
 export class HeaderComponent extends React.Component {
   render(): React.ReactNode {
@@ -19,7 +19,7 @@ export class HeaderComponent extends React.Component {
             </Link>
           </Grid>
           <Grid>
-            <UploadModule />
+            <UploadComponent />
           </Grid>
         </Grid>
       </AppBar>

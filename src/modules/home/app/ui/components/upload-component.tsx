@@ -1,9 +1,9 @@
 import { IconButton } from "@mui/material";
 import { PhotoCamera } from "@mui/icons-material";
 import React from "react";
-import { UploadImageUsecase } from "../../domain/usecases/upload-image-usecase";
+import { UploadImageUsecase } from "../../../domain/usecases/upload-image-usecase";
 
-export class UploadUi extends React.Component<any, any> {
+export class UploadComponent extends React.Component<any, any> {
   private readonly uploadImageUsecase = new UploadImageUsecase();
 
   constructor(props: any) {
