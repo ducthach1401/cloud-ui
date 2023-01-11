@@ -1,6 +1,6 @@
 import { LoginModule } from "../login/login-module";
 import "./App.css";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { HomeModule } from "../home/home-module";
 import { getCookie } from "../../core/helpers/utils";
 
@@ -9,14 +9,14 @@ function App() {
     return (
       <Routes>
         <Route path="/login" element={<LoginModule />} />
-        <Route path="/*" element={<LoginModule />} />
+        <Route path="/*" element={<Navigate to="/login" replace />} />
       </Routes>
     );
   }
   return (
     <Routes>
       <Route path="/" element={<HomeModule />} />
-      <Route path="/login" element={<LoginModule />} />
+      <Route path="/*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 }

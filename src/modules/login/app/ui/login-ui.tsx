@@ -8,7 +8,7 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import { LoginUsecase } from "../domain/usecases/login-usecase";
+import { LoginUsecase } from "../../domain/usecases/login-usecase";
 
 export class LoginUi extends React.Component<any, any> {
   private readonly loginUsecase: LoginUsecase = new LoginUsecase();
