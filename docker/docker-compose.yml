@@ -1,3 +1,10 @@
 services:
   node:
-    
+    image: ${COMPOSE_PROJECT_NAME}/node:16-alpine
+    build: images/node
+    command: /bin/sh -c "npm run start"
+    restart: on-failure
+    ports:
+      - "${HTTP_PORT}:3000"
+    volumes:
+      - ../:/var/www
