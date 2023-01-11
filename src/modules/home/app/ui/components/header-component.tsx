@@ -1,5 +1,6 @@
 import { AppBar, Grid, Link } from "@mui/material";
 import React from "react";
+import { LogoutComponent } from "./logout-component";
 import { UploadComponent } from "./upload-component";
 
 export class HeaderComponent extends React.Component {
@@ -7,10 +8,10 @@ export class HeaderComponent extends React.Component {
     return (
       <AppBar style={{ padding: "0.5%" }}>
         <Grid container direction="row" alignItems="center">
-          <Grid xs={2}>
+          <Grid xs={3} textAlign="center">
             <Link
               variant="h4"
-              marginLeft="5%"
+              marginLeft="10%"
               href="/"
               style={{ color: "white" }}
               underline="none"
@@ -18,8 +19,11 @@ export class HeaderComponent extends React.Component {
               Private Cloud
             </Link>
           </Grid>
-          <Grid>
+          <Grid xs={2}>
             <UploadComponent />
+          </Grid>
+          <Grid xs={7} textAlign="right">
+            <LogoutComponent />
           </Grid>
         </Grid>
       </AppBar>

@@ -6,4 +6,6 @@ export abstract class HomeRepository {
   ): Promise<any>;
 
   abstract upload(file: any): Promise<void>;
+
+  abstract logout(): Promise<void>;
 }

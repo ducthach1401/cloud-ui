@@ -1,8 +1,9 @@
+import { Cookie } from "../../../../core/enums/cookies";
 import { getCookie, throwError } from "../../../../core/helpers/utils";
 
 export class HomeService {
   private getBaseUrl(): string {
-    return process.env.REACT_APP_URL_API ?? throwError();
+    return process.env.REACT_APP_API_URL ?? throwError();
   }
 
   async list(
@@ -26,7 +27,7 @@ export class HomeService {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${getCookie("access_token")}`,
+          Authorization: `Bearer ${getCookie(Cookie.AccessToken)}`,
         },
       }
     );
@@ -40,7 +41,17 @@ export class HomeService {
       method: "POST",
       body: formData,
       headers: {
-        Authorization: `Bearer ${getCookie("access_token")}`,
+        Authorization: `Bearer ${getCookie(Cookie.AccessToken)}`,
+      },
+    });
+    await response.json();
+  }
+
+  async logout(): Promise<void> {
+    const response = await fetch(`${this.getBaseUrl()}/auth/logout`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${getCookie(Cookie.AccessToken)}`,
       },
     });
     await response.json();

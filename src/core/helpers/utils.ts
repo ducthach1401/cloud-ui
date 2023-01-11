@@ -17,3 +17,7 @@ export function getCookie(key: string): string | undefined {
     return cookie.split(";").shift();
   }
 }
+
+export function deleteCookie(key: string) {
+  document.cookie = key + "=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+}

@@ -2,7 +2,7 @@ import { throwError } from "../../../../core/helpers/utils";
 
 export class LoginService {
   private getBaseUrl(): string {
-    return process.env.REACT_APP_URL_API ?? throwError();
+    return process.env.REACT_APP_API_URL ?? throwError();
   }
 
   async login(username: string, password: string): Promise<any> {

@@ -11,7 +11,12 @@ export class HomeRepositoryImpl extends HomeRepository {
   ): Promise<any> {
     return await this.homeService.list(search, page, limit);
   }
+
   async upload(file: any): Promise<void> {
     await this.homeService.upload(file);
+  }
+
+  async logout(): Promise<void> {
+    await this.homeService.logout();
   }
 }

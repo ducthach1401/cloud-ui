@@ -3,9 +3,10 @@ import "./App.css";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { HomeModule } from "../home/home-module";
 import { getCookie } from "../../core/helpers/utils";
+import { Cookie } from "../../core/enums/cookies";
 
 function App() {
-  if (!getCookie("access_token")) {
+  if (!getCookie(Cookie.AccessToken)) {
     return (
       <Routes>
         <Route path="/login" element={<LoginModule />} />

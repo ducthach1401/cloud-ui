@@ -75,7 +75,7 @@ export class ImageComponent extends React.Component<any, any> {
       <ImageList cols={3}>
         {this.state.items.map((item: any) => {
           const url = `${
-            process.env.REACT_APP_URL_API
+            process.env.REACT_APP_API_URL
           }/cloud/show/${encodeURIComponent(item.name)}?${params.toString()}`;
           return (
             <ImageListItem key={item.name}>
