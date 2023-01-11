@@ -9,6 +9,8 @@ import {
   Typography,
 } from "@mui/material";
 import { LoginUsecase } from "../../domain/usecases/login-usecase";
+import { notification, setCookie } from "../../../../core/helpers/utils";
+import { Cookie } from "../../../../core/enums/cookies";
 
 export class LoginUi extends React.Component<any, any> {
   private readonly loginUsecase: LoginUsecase = new LoginUsecase();
@@ -18,6 +20,15 @@ export class LoginUi extends React.Component<any, any> {
       username: "",
       password: "",
     };
+  }
+
+  async login(username: string, password: string) {
+    const token = await this.loginUsecase.call(username, password);
+    if (token.error_code) {
+      return notification("error", "Login Failed!", token.error_message, 1000);
+    }
+    setCookie(Cookie.AccessToken, token.access_token);
+    window.location.reload();
   }
 
   render(): React.ReactNode {
@@ -67,10 +78,7 @@ export class LoginUi extends React.Component<any, any> {
                     size="medium"
                     style={{ width: "40%" }}
                     onClick={() =>
-                      this.loginUsecase.call(
-                        this.state.username,
-                        this.state.password
-                      )
+                      this.login(this.state.username, this.state.password)
                     }
                   >
                     Login
