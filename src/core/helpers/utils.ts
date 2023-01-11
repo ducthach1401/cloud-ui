@@ -1,5 +1,6 @@
 import Swal, { SweetAlertIcon } from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+import { MethodType } from "../enums/method-type";
 
 export function throwError(errorMessage?: string): never {
   throw new Error(errorMessage);
@@ -38,4 +39,21 @@ export function notification(
     text: text,
     timer: timer,
   });
+}
+
+export async function request(
+  url: string,
+  method: MethodType,
+  body: Record<string, any> | undefined,
+  token: string | undefined
+): Promise<any> {
+  const response = await fetch(url, {
+    method: method,
+    body: JSON.stringify(body),
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    },
+  });
+  return await response.json();
 }
