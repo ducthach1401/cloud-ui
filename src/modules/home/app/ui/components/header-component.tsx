@@ -1,4 +1,4 @@
-import { AppBar, Grid, Typography } from "@mui/material";
+import { AppBar, Grid, Link } from "@mui/material";
 import React from "react";
 import { UploadModule } from "../../../../upload/upload-module";
 
@@ -8,9 +8,15 @@ export class HeaderComponent extends React.Component {
       <AppBar style={{ padding: "0.5%" }}>
         <Grid container direction="row" alignItems="center">
           <Grid xs={2}>
-            <Typography component="h1" variant="h4" marginLeft="5%">
+            <Link
+              variant="h4"
+              marginLeft="5%"
+              href="/"
+              style={{ color: "white" }}
+              underline="none"
+            >
               Private Cloud
-            </Typography>
+            </Link>
           </Grid>
           <Grid>
             <UploadModule />
