@@ -5,6 +5,7 @@ import {
   Container,
   CssBaseline,
   Grid,
+  Link,
   TextField,
   Typography,
 } from "@mui/material";
@@ -100,6 +101,9 @@ export class RegisterUi extends React.Component<any, any> {
                   >
                     Register
                   </Button>
+                </Grid>
+                <Grid marginTop="20px" textAlign="center">
+                  <Link href="/login">Have an account? Login</Link>
                 </Grid>
               </Grid>
             </Grid>

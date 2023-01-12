@@ -5,6 +5,7 @@ import {
   Container,
   CssBaseline,
   Grid,
+  Link,
   TextField,
   Typography,
 } from "@mui/material";
@@ -83,6 +84,9 @@ export class LoginUi extends React.Component<any, any> {
                   >
                     Login
                   </Button>
+                </Grid>
+                <Grid textAlign="center" marginTop="20px">
+                  <Link href="/register">Register Account</Link>
                 </Grid>
               </Grid>
             </Grid>
