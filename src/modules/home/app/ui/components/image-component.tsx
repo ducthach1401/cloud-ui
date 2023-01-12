@@ -12,7 +12,7 @@ export class ImageComponent extends React.Component<any, any> {
       items: [],
       position: 0,
       page: 1,
-      limit: 6,
+      limit: 30,
       block: false,
     };
   }
@@ -67,12 +67,12 @@ export class ImageComponent extends React.Component<any, any> {
 
     const params = new URLSearchParams({
       operation: "thumbnail",
-      weight: "400",
-      height: "400",
+      weight: "250",
+      height: "250",
     });
 
     return (
-      <ImageList cols={3}>
+      <ImageList cols={5}>
         {this.state.items.map((item: any) => {
           const url = `${
             process.env.REACT_APP_API_URL
