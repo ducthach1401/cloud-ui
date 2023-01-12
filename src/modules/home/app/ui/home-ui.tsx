@@ -9,7 +9,7 @@ export class HomeUi extends React.Component {
     return (
       <ThemeProvider theme={createTheme()}>
         <HeaderComponent />
-        <Container>
+        <Container style={{ marginTop: "4%" }}>
           <Grid container>
             <ImageComponent />
           </Grid>

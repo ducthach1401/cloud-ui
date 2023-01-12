@@ -62,7 +62,7 @@ export class LoginUi extends React.Component<any, any> {
                     fullWidth
                     required
                     id="password"
-                    label="password"
+                    label="Password"
                     name="password"
                     autoComplete="password"
                     type="password"
