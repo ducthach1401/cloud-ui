@@ -1,7 +1,7 @@
-FROM node:16-alpine
+FROM nginx:1.22-alpine
 
-WORKDIR /var/www
-COPY . /var/www/
-RUN npm install -g serve
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY ./build/ /usr/share/nginx/html/
 
-CMD [ "serve", "build" ]
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
