@@ -19,10 +19,10 @@ export class HeaderComponent extends React.Component {
               Private Cloud
             </Link>
           </Grid>
-          <Grid xs={2}>
+          <Grid xs={4}>
             <UploadComponent />
           </Grid>
-          <Grid xs={7} textAlign="right">
+          <Grid xs={5} textAlign="right">
             <LogoutComponent />
           </Grid>
         </Grid>
