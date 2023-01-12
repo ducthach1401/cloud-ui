@@ -34,7 +34,6 @@ export class ImageComponent extends React.Component<any, any> {
 
   componentDidMount(): void {
     this.loadImage();
-    this.loadImage();
     window.addEventListener("scroll", this.listenToScroll);
   }
 
