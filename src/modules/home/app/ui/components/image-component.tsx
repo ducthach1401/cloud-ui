@@ -12,7 +12,7 @@ export class ImageComponent extends React.Component<any, any> {
       items: [],
       position: 0,
       page: 1,
-      limit: 30,
+      limit: 20,
       block: false,
     };
   }
@@ -76,9 +76,10 @@ export class ImageComponent extends React.Component<any, any> {
           const url = `${
             process.env.REACT_APP_API_URL
           }/cloud/show/${encodeURIComponent(item.name)}?${params.toString()}`;
+
           return (
             <ImageListItem key={item.name}>
-              <img src={url} srcSet={url} alt={item.name} loading="lazy" />
+              <img src={url} alt={item.name} loading="lazy" />
             </ImageListItem>
           );
         })}
